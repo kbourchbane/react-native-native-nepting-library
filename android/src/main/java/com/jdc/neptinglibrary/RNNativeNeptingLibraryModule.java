@@ -31,7 +31,12 @@ public class RNNativeNeptingLibraryModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void show(String text, final Promise p) {
+  public void show(final Promise p) {
+    p.resolve("hi nepting");
+  }
+
+  @ReactMethod
+  public void getText(String text, final Promise p) {
     p.resolve("hi nepting");
   }
 
