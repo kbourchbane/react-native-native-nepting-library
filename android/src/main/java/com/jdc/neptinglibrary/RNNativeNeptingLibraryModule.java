@@ -8,7 +8,7 @@ import android.util.Log;
 
 import com.facebook.react.bridge.ActivityEventListener;
 import com.facebook.react.bridge.Promise;
-//import com.facebook.react.bridge.BaseActivityEventListener;
+import com.facebook.react.bridge.BaseActivityEventListener;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -17,7 +17,7 @@ import com.facebook.react.bridge.WritableNativeMap;
 public class RNNativeNeptingLibraryModule extends ReactContextBaseJavaModule {
 
   private Promise promise;
-
+  private final String TAG = "pax";
   private final ReactApplicationContext reactContext;
 
   public RNNativeNeptingLibraryModule(ReactApplicationContext reactContext) {
@@ -41,7 +41,7 @@ public class RNNativeNeptingLibraryModule extends ReactContextBaseJavaModule {
     p.resolve("bonjour Promise bridge android !!");
   }
 
-  /*private final ActivityEventListener eventListener = new BaseActivityEventListener() {
+  private final ActivityEventListener eventListener = new BaseActivityEventListener() {
     @Override
     public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent intent) {
       try {
@@ -98,5 +98,5 @@ public class RNNativeNeptingLibraryModule extends ReactContextBaseJavaModule {
     paymentIntent.putExtra("MERCHANT_TRS_ID", merchantTrsId);
     getCurrentActivity().startActivityForResult(paymentIntent, 9803);
 
-  }*/
+  }
 }

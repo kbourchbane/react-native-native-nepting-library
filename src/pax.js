@@ -4,7 +4,7 @@ class Pax{
   pax = NativeModules.RNNativeNeptingLibrary;
 
   // pax Payement
-  // startPayement = async (messageType, amount, currencyCode, currencyFraction, currencyAlpha, merchantTrsId) => await this.pax.startPayement(messageType, amount, currencyCode, currencyFraction, currencyAlpha, merchantTrsId);
+  startPayement = async (messageType, amount, currencyCode, currencyFraction, currencyAlpha, merchantTrsId) => await this.pax.startPayement(messageType, amount, currencyCode, currencyFraction, currencyAlpha, merchantTrsId);
 
   // pax Printer
   // initPrinter = async () => await this.pax.initPrinter();
@@ -33,7 +33,7 @@ const pax = new Pax();
 
 export default {
   Payement: {
-    // start: pax.startPayement,
+    start: pax.startPayement,
     show: pax.show,
     getString: pax.getString,
   },
