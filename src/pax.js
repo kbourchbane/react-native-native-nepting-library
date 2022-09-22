@@ -25,6 +25,8 @@ class Pax{
   getCutModePrinter = async () => await this.pax.getCutModePrinter();
 
   show = async () => await this.pax.show();
+  getString = async () => await this.pax.getString();
+  
 }
 
 const pax = new Pax();
@@ -33,6 +35,7 @@ export default {
   Payement: {
     start: pax.startPayement,
     show: pax.show,
+    getString: pax.getString,
   },
   Printer: {
     init: pax.initPrinter,

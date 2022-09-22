@@ -36,8 +36,9 @@ public class RNNativeNeptingLibraryModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void getText(String text, final Promise p) {
-    p.resolve("hi nepting");
+  public void getString(final Promise p) {
+
+    p.resolve("bonjour Promise bridge android !!");
   }
 
   /*private final ActivityEventListener eventListener = new BaseActivityEventListener() {
