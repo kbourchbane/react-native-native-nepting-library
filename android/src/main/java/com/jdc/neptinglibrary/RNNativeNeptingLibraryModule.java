@@ -97,12 +97,12 @@ public class RNNativeNeptingLibraryModule extends ReactContextBaseJavaModule {
               Log.d(TAG, String.format("%s %s (%s)", key, value.toString(), value.getClass().getName()));
             }
             if (resultCode == Activity.RESULT_OK) {
-              resultList.putString("RESULT_OK", "ok");
+              resultList.putString("RESULT_TRS_OK", "ok");
               // TRS OK
               promise.resolve(resultList);
 
             } else{
-              resultList.putString("RESULT_OK", "ko");
+              resultList.putString("RESULT_TRS_OK", "ko");
               // TRS KO
               // Verifier POS_FINAL_AMOUNT
               promise.resolve(resultList);
