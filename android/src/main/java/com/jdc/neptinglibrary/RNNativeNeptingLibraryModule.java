@@ -133,7 +133,7 @@ public class RNNativeNeptingLibraryModule extends ReactContextBaseJavaModule {
     paymentIntent.putExtra("MESSAGE_NAME", messageName);
     paymentIntent.putExtra("MESSAGE_TYPE", messageType);
     paymentIntent.putExtra("MESSAGE_ID", messageId);
-    //paymentIntent.putExtra("TOKEN", token);
+    if(!token.equalsIgnoreCase("no_token")) paymentIntent.putExtra("TOKEN", token);
     paymentIntent.putExtra("AMOUNT", amount);
     paymentIntent.putExtra("CURRENCY_CODE", currencyCode); // 826
     paymentIntent.putExtra("CURRENCY_FRACTION", currencyFraction); // 2
