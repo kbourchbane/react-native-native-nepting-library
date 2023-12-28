@@ -47,22 +47,19 @@ export default {
     show: pax.show,
     getString: pax.getString,
   },
-  Printer: {
-    // init: pax.initPrinter,
-    // getStatus: pax.getStatusPrinter,
-    // fontSet: pax.fontSetPrinter,
-    // spaceSet: pax.spaceSetPrinter,
-    // printStr: pax.printStrPrinter,
-    // step: pax.stepPrinter,
-    // printBitmap: pax.printBitmapPrinter,
-    // start: pax.startPrinter,
-    // leftIndents: pax.leftIndentsPrinter,
-    // getDotLine: pax.getDotLinePrinter,
-    // setGray: pax.setGrayPrinter,
-    // setDoubleWidth: pax.setDoubleWidthPrinter,
-    // setDoubleHeight: pax.setDoubleHeightPrinter,
-    // setInvert: pax.setInvertPrinter,
-    // cutPaper: pax.cutPaperPrinter,
-    // getCutMode: pax.getCutModePrinter
+  PrinterPax: {
+    initPrinter: pax.initPrinter,
+    getStatusPrinter: pax.getStatusPrinter,
+    startPrinter: pax.startPrinter,
+    printStrPrinter: pax.printStrPrinter,
+    printBitmapPrinter: pax.printBitmapPrinter,
+    printQRcodePrinter: pax.printQRcodePrinter,
+    startPrintQRcode: pax.startPrintQRcode,
+  },
+  PrinterSunmi: {
+    initSunmiPrinter: pax.initSunmiPrinter,
+    printSunmiStrPrinter: pax.printSunmiStrPrinter,
+    printSunmiQrcodePrinter: pax.printSunmiQrcodePrinter,
+    printSunmiDisconnectionPrinter: pax.printSunmiDisconnectionPrinter,
   }
 };
