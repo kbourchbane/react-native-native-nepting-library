@@ -186,14 +186,16 @@ public class RNNativeNeptingLibraryModule extends ReactContextBaseJavaModule {
       @Override
       public void run() {
 
-        try {
-          printer = InitDal.getDal(getReactApplicationContext()).getPrinter();
-          printer.init();
-          p.resolve("init ok !!");
-        } catch (PrinterDevException e) {
-          e.printStackTrace();
-          p.reject("ERROR pax init", e.getMessage());
-        }
+        //if (printer == null) {
+          try {
+            printer = InitDal.getDal(getReactApplicationContext()).getPrinter();
+            printer.init();
+            p.resolve("init ok !!");
+          } catch (PrinterDevException e) {
+            e.printStackTrace();
+            p.reject("ERROR pax init", e.getMessage());
+          }
+        //}
       }
     });
   }
@@ -428,7 +430,7 @@ public class RNNativeNeptingLibraryModule extends ReactContextBaseJavaModule {
       }
     });
   }
-  
+
   public Bitmap getBitmapFromStringBase64(String encodedImage){
     byte[] decodedString = Base64.decode(encodedImage, Base64.DEFAULT);
     Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
