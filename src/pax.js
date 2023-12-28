@@ -7,14 +7,23 @@ class Pax{
   startPayement = async (messageName, messageType, messageId, token, amount, currencyCode, currencyFraction, currencyAlpha, merchantTrsId, posNumber) => await this.pax.startPayement(messageName, messageType, messageId, token, amount, currencyCode, currencyFraction, currencyAlpha, merchantTrsId, posNumber);
   loginPayement = async (messageName, messageType, messageId, webServiceUrl, merchantCode, storeId, posNumber, cashierId) => await this.pax.loginPayement(messageName, messageType, messageId, webServiceUrl, merchantCode, storeId, posNumber, cashierId);
   // pax Printer
-  // initPrinter = async () => await this.pax.initPrinter();
-  // getStatusPrinter = async () => await this.pax.getStatusPrinter();
+  initPrinter = async () => await this.pax.initPrinter();
+  getStatusPrinter = async () => await this.pax.getStatusPrinter();
+  startPrinter = async () => await this.pax.startPrinter();
+  printStrPrinter = async (str, charset) => await this.pax.printStrPrinter(str, charset);
+  printBitmapPrinter = async (bitmap) => await this.pax.printBitmapPrinter(bitmap);
+  printQRcodePrinter = async (strQrcode) => await this.pax.printQRcodePrinter(strQrcode);
+  startPrintQRcode = async (strQrcode) => await this.pax.startPrintQRcode(strQrcode);
+
+  // Sunmi printer
+  initSunmiPrinter = async () => await this.pax.initSunmiPrinter();
+  printSunmiStrPrinter = async (str) => await this.pax.printSunmiStrPrinter(str);
+  printSunmiQrcodePrinter = async (str) => await this.pax.printSunmiQrcodePrinter(str);
+  printSunmiDisconnectionPrinter = async () => await this.pax.printSunmiDisconnectionPrinter();
+
   // fontSetPrinter = async (asciiFontTypeStr, cFontTypeStr) => await this.pax.fontSetPrinter(asciiFontTypeStr, cFontTypeStr);
   // spaceSetPrinter = async (wordSpace, lineSpace) => await this.pax.spaceSetPrinter(wordSpace, lineSpace);
-  // printStrPrinter = async (str, charset) => await this.pax.printStrPrinter(str, charset);
   // stepPrinter = async (b) => await this.pax.stepPrinter(b);
-  // printBitmapPrinter = async (bitmap) => await this.pax.printBitmapPrinter(bitmap);
-  // startPrinter = async () => await this.pax.startPrinter();
   // leftIndentsPrinter = async (indent) => await this.pax.leftIndentsPrinter(indent);
   // getDotLinePrinter = async () => await this.pax.getDotLinePrinter();
   // setGrayPrinter = async (level) => await this.pax.setGrayPrinter(level);

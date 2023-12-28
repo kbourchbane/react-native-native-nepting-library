@@ -34,10 +34,14 @@ repositories {
         // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
         url "$rootDir/../node_modules/react-native/android"
     }
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.facebook.react:react-native:+'
+    implementation files('libs/NeptuneLiteApi_V4.02.00_20230921.jar')
+    implementation 'com.github.androidmads:QRGenerator:1.0.1'
+    implementation 'com.sunmi:printerlibrary:1.0.22'
 }
   
