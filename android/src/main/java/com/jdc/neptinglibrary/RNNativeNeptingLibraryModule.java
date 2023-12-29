@@ -193,6 +193,9 @@ public class RNNativeNeptingLibraryModule extends ReactContextBaseJavaModule {
             p.resolve("init ok !!");
           } catch (PrinterDevException e) {
             e.printStackTrace();
+            //throw new Exception(e.getMessage());
+            Thread t = Thread.currentThread();
+            t.getUncaughtExceptionHandler().uncaughtException(t, e);
             p.reject("ERROR pax init", e.getMessage());
           }
         //}
