@@ -14,6 +14,7 @@ class Pax{
   printBitmapPrinter = async (bitmap) => await this.pax.printBitmapPrinter(bitmap);
   printQRcodePrinter = async (strQrcode) => await this.pax.printQRcodePrinter(strQrcode);
   startPrintQRcode = async (strQrcode) => await this.pax.startPrintQRcode(strQrcode);
+  printLeftIndentPrinter = async (leftSpace) => await this.pax.printLeftIndentPrinter(leftSpace);
 
   // Sunmi printer
   initSunmiPrinter = async () => await this.pax.initSunmiPrinter();
@@ -21,6 +22,7 @@ class Pax{
   printSunmiQrcodePrinter = async (str) => await this.pax.printSunmiQrcodePrinter(str);
   printSunmiDisconnectionPrinter = async () => await this.pax.printSunmiDisconnectionPrinter();
   printSunmiBitmapPrinter = async (bitmap) => await this.pax.printSunmiBitmapPrinter(bitmap);
+  printSunmiSetAlignmentPrinter = async (align) => await this.pax.printSunmiSetAlignmentPrinter(align);
 
   // fontSetPrinter = async (asciiFontTypeStr, cFontTypeStr) => await this.pax.fontSetPrinter(asciiFontTypeStr, cFontTypeStr);
   // spaceSetPrinter = async (wordSpace, lineSpace) => await this.pax.spaceSetPrinter(wordSpace, lineSpace);
