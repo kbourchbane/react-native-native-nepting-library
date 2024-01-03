@@ -20,6 +20,7 @@ class Pax{
   printSunmiStrPrinter = async (str) => await this.pax.printSunmiStrPrinter(str);
   printSunmiQrcodePrinter = async (str) => await this.pax.printSunmiQrcodePrinter(str);
   printSunmiDisconnectionPrinter = async () => await this.pax.printSunmiDisconnectionPrinter();
+  printSunmiBitmapPrinter = async (bitmap) => await this.pax.printSunmiBitmapPrinter(bitmap);
 
   // fontSetPrinter = async (asciiFontTypeStr, cFontTypeStr) => await this.pax.fontSetPrinter(asciiFontTypeStr, cFontTypeStr);
   // spaceSetPrinter = async (wordSpace, lineSpace) => await this.pax.spaceSetPrinter(wordSpace, lineSpace);

@@ -419,6 +419,45 @@ public class RNNativeNeptingLibraryModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
+  public void printSunmiBitmapPrinter(final String bitmap, final Promise p) {
+    ThreadPoolManager.getInstance().executeTask(new Runnable() {
+      @Override
+      public void run() {
+        try{
+          sunmiPrinterService.printBitmap(getBitmapFromStringBase64(bitmap), new InnerResultCallback() {
+            @Override
+            public void onRunResult(boolean isSuccess) throws
+                    RemoteException {
+              //Return the execution result (not a real printing): succeeded or failed
+              p.resolve("isSuccess : " + isSuccess);
+            }
+            @Override
+            public void onReturnString(String result) throws
+                    RemoteException {
+              //Some interfaces return inquired data asynchronously
+              p.resolve(result);
+            }
+            @Override
+            public void onRaiseException(int code, String msg) throws RemoteException {
+              //The exception returned when the interfacefailedtoexecute
+              p.reject("ERROR Sunmi print bitmap", msg);
+            }
+            @Override
+            public void onPrintResult(int code, String msg) throws RemoteException {
+              //The real printing result returned in transactionprinting mode
+              p.resolve("onPrintResult : " + msg);
+            };
+          });
+        } catch (RemoteException e) {
+          e.printStackTrace();
+          //If some interfaces can only be used for specified devicemodels, thecall error reminder will pop out. For example, the interface of a cashdrawercanonly be used for a desktop device.
+          p.reject("ERROR Sunmi print bitmap catch", e.getMessage());
+        }
+      }
+    });
+  }
+
+  @ReactMethod
   public void printSunmiDisconnectionPrinter(final Promise p) {
     ThreadPoolManager.getInstance().executeTask(new Runnable() {
       @Override
