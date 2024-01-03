@@ -58,11 +58,14 @@ export default {
     printBitmapPrinter: pax.printBitmapPrinter,
     printQRcodePrinter: pax.printQRcodePrinter,
     startPrintQRcode: pax.startPrintQRcode,
+    printLeftIndentPrinter: pax.printLeftIndentPrinter,
   },
   PrinterSunmi: {
     initSunmiPrinter: pax.initSunmiPrinter,
     printSunmiStrPrinter: pax.printSunmiStrPrinter,
     printSunmiQrcodePrinter: pax.printSunmiQrcodePrinter,
     printSunmiDisconnectionPrinter: pax.printSunmiDisconnectionPrinter,
+    printSunmiBitmapPrinter: pax.printSunmiBitmapPrinter,
+    printSunmiSetAlignmentPrinter: pax.printSunmiSetAlignmentPrinter,
   }
 };
