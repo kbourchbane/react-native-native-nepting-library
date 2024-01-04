@@ -288,16 +288,16 @@ public class RNNativeNeptingLibraryModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void printQRcodePrinter(final String str, final Promise p) {
+  public void printQRcodePrinter(final String str, final Integer size, final Promise p) {
     ThreadPoolManager.getInstance().executeTask(new Runnable() {
       @Override
       public void run() {
-        QRGEncoder qrgEncoder = new QRGEncoder(str, null, QRGContents.Type.TEXT, 200);
+        QRGEncoder qrgEncoder = new QRGEncoder(str, null, QRGContents.Type.TEXT, size);
         qrgEncoder.setColorBlack(Color.BLACK);
         qrgEncoder.setColorWhite(Color.WHITE);
 
         try {
-          Bitmap bitmap = qrgEncoder.getBitmap();
+          Bitmap bitmap = qrgEncoder.getBitmap(1);
           printer.printBitmap(bitmap);
           p.resolve("print QRcode ok !!");
         } catch (PrinterDevException e) {
@@ -315,7 +315,7 @@ public class RNNativeNeptingLibraryModule extends ReactContextBaseJavaModule {
       @Override
       public void run() {
         initPrinter(p);
-        printQRcodePrinter(reward, p);
+        printQRcodePrinter(reward, 400, p);
         startPrinter(p);
       }
     });

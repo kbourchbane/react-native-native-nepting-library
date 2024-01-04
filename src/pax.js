@@ -12,7 +12,7 @@ class Pax{
   startPrinter = async () => await this.pax.startPrinter();
   printStrPrinter = async (str, charset) => await this.pax.printStrPrinter(str, charset);
   printBitmapPrinter = async (bitmap) => await this.pax.printBitmapPrinter(bitmap);
-  printQRcodePrinter = async (strQrcode) => await this.pax.printQRcodePrinter(strQrcode);
+  printQRcodePrinter = async (strQrcode, size) => await this.pax.printQRcodePrinter(strQrcode, size);
   startPrintQRcode = async (strQrcode) => await this.pax.startPrintQRcode(strQrcode);
   printLeftIndentPrinter = async (leftSpace) => await this.pax.printLeftIndentPrinter(leftSpace);
 
