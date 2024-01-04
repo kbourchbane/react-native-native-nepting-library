@@ -186,7 +186,7 @@ public class RNNativeNeptingLibraryModule extends ReactContextBaseJavaModule {
       @Override
       public void run() {
 
-        if (printer == null) {
+        //if (printer == null) {
           try {
             printer = InitDal.getDal(getReactApplicationContext()).getPrinter();
             printer.init();
@@ -198,7 +198,7 @@ public class RNNativeNeptingLibraryModule extends ReactContextBaseJavaModule {
             //t.getUncaughtExceptionHandler().uncaughtException(t, e);
             p.reject("ERROR pax init", e.getMessage());
           }
-        }
+        //}
       }
     });
   }

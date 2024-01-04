@@ -66,6 +66,6 @@ export default {
     printSunmiQrcodePrinter: pax.printSunmiQrcodePrinter,
     printSunmiDisconnectionPrinter: pax.printSunmiDisconnectionPrinter,
     printSunmiBitmapPrinter: pax.printSunmiBitmapPrinter,
-    printSunmiSetAlignmentPrinter: pax.printSunmiSetAlignmentPrinter,
+    printSunmiSetAlignmentPrinter: pax.printSunmiSetAlignmentPrinter, // 0 left 1 center
   }
 };
